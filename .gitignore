@@ -1,0 +1,12 @@
+dataset/*
+!dataset/README.md
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+frontend/dist/
+artifacts/
+*.part
+*.db
+artifacts_*.log
+artifacts/shots/

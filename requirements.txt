@@ -1,0 +1,14 @@
+# Python 3.11. Install a CUDA build of torch first if you have an NVIDIA GPU:
+#   py -3.11 -m pip install torch --index-url https://download.pytorch.org/whl/cu121
+torch>=2.5
+numpy
+pandas
+scipy
+scikit-learn
+xgboost
+openpyxl
+ortools
+fastapi
+uvicorn[standard]
+# optional: screenshots for visual QA (scripts/screenshots.py)
+playwright
