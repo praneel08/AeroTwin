@@ -46,6 +46,18 @@ def _drift(sens, upto):
     return np.abs(cur - base)
 
 
+def _coverage():
+    """Share of true RUL inside the +-2 sigma interval during the degradation phase (RUL < 100), raw and after calibration."""
+    from fleet.sim import SIGMA_CAL
+    mu = np.concatenate([e["mu"] for e in engines.values()]); sd = np.concatenate([e["sigma"] for e in engines.values()])
+    y = np.concatenate([np.minimum(e["true_rul"], 125) for e in engines.values()])
+    m = y < 100
+    err = np.abs(mu - y)[m]
+    return dict(raw=float(np.mean(err <= 2 * sd[m])), calibrated=float(np.mean(err <= 2 * SIGMA_CAL * sd[m])), factor=SIGMA_CAL)
+
+
+COVERAGE = _coverage()
+
 app = FastAPI(title="AeroTwin API")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
@@ -80,13 +92,27 @@ def _plan_map(r, day):
     return {s: sd for s, sd in r["plans"][day]}
 
 
-def _engine_state(r, day, s, plan):
+def _plan_depots(r, day):
+    out, by_day = {}, {}
+    for s, sd in sorted(r["plans"][day], key=lambda x: x[1]):
+        k = by_day.get(sd, 0); by_day[sd] = k + 1
+        out[s] = DEPOT_NAMES[k % N_DEPOTS]
+    return out
+
+
+def _modules(sens, cyc):
+    """Wear (0-1) per engine section from sensor drift vs this engine's own early-life baseline (illustrative mapping)."""
+    drift = _drift(sens, cyc)
+    return {m: float(np.clip(np.mean([drift[i] for i, sid in enumerate(SENSOR_IDS) if SENSOR_INFO[sid][2] == m]) / 0.25, 0, 1)) for m in MODULES}
+
+
+def _engine_state(r, day, s, plan, depots=None):
     rec = r["rec"]
     mu, sg, st = float(rec["mu"][day, s]), float(rec["sigma"][day, s]), int(rec["state"][day, s])
     risk = _risk(mu, sg)
     return dict(slot=s, position="Port" if s % 2 == 0 else "Starboard", state=STATE_NAME[st],
                 cycle=int(rec["cycle"][day, s]), rul_mean=round(mu, 1), rul_sigma=round(sg, 1), risk=round(risk, 3),
-                health=_engine_class(st, risk), scheduled_day=plan.get(s))
+                health=_engine_class(st, risk), scheduled_day=plan.get(s), scheduled_depot=(depots or {}).get(s))
 
 
 def _aircraft_status(engs, stock=1):
@@ -143,22 +169,24 @@ def aircraft(a: int, day: int = 0, policy: str = "predictive"):
         raise HTTPException(404, "no such aircraft")
     r, day = _rec(policy), _day(day)
     rec, plan, ex = r["rec"], _plan_map(r, day), extras[policy]
+    depots = _plan_depots(r, day)
     out_eng = []
     for e in range(2):
         s = 2 * a + e
-        eng = _engine_state(r, day, s, plan)
+        eng = _engine_state(r, day, s, plan, depots)
         traj, cyc = int(rec["traj"][day, s]), int(rec["cycle"][day, s])
         sens = engines[traj]["sensors"]
         win = sens[max(cyc - 60, 0):max(cyc, 1)]
-        drift = _drift(sens, cyc)
-        mod = {m: float(np.clip(np.mean([drift[i] for i, sid in enumerate(SENSOR_IDS) if SENSOR_INFO[sid][2] == m]) / 0.25, 0, 1))
-               for m in MODULES}
+        mod = _modules(sens, cyc)
+        # wear history for the "how this engine wore out" slider: every 5 cycles from new to now
+        steps = sorted(set(list(range(0, max(cyc, 1), 5)) + [cyc]))
+        wear_hist = [dict(cycle=c, **{k: round(v, 3) for k, v in _modules(sens, c).items()}) for c in steps]
         # RUL history: same trajectory, up to today, every day the engine was operating
         hist = []
         for d in range(max(day - 120, 0), day + 1):
             if int(rec["traj"][d, s]) == traj and int(rec["state"][d, s]) == 0:
                 hist.append([d, round(float(rec["mu"][d, s]), 1), round(float(rec["sigma"][d, s]), 1)])
-        eng.update(modules={k: round(v, 3) for k, v in mod.items()}, rul_history=hist,
+        eng.update(modules={k: round(v, 3) for k, v in mod.items()}, modules_history=wear_hist, rul_history=hist,
                    sensors={SENSOR_INFO[sid][0]: [round(float(x), 3) for x in win[:, i]] for i, sid in enumerate(SENSOR_IDS)})
         out_eng.append(eng)
     d0 = max(day - 29, 0)
@@ -212,7 +240,8 @@ def sensitivity():
 @app.get("/api/models")
 def models():
     rows = [dict(fd=r["fd"], model=r["model"], rmse=r["summary"]["rmse"], score=r["summary"]["score"]) for r in ml_results]
-    return dict(rul=rows, anomaly=anomaly_results, nlp=dict(silhouette_by_k=nlp_clusters["silhouette_by_k"],
+    fd1 = min((r for r in rows if r["fd"] == "FD001"), key=lambda r: r["rmse"][0])
+    return dict(rul=rows, best_fd001=fd1, uncertainty=COVERAGE, anomaly=anomaly_results, nlp=dict(silhouette_by_k=nlp_clusters["silhouette_by_k"],
                 clusters=[{k: c[k] for k in ("id", "size", "top_terms", "main_component", "component_share")} for c in nlp_clusters["clusters"]]),
                 published_fd001_rmse={"Babu 2016 (CNN)": 18.45, "Zheng 2017 (LSTM)": 16.14, "Li 2018 (DCNN)": 12.61, "DAST 2021 (Transformer)": 11.43})
 

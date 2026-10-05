@@ -71,12 +71,13 @@ Frontend development: `cd frontend && npm run dev` (proxies `/api` to port 8000)
 
 ## Using the dashboard
 
-- **Replay bar** (bottom): play, scrub or change speed; every view follows the simulated date.
-- **Policy switch** (top right): view the same fleet under AeroTwin, a fixed interval, or repair on failure.
-- **Overview:** availability, grounded aircraft, spare engines, and the engines most at risk.
-- **Digital twin:** drag to orbit, click an engine to explode it into Fan, Compressor, Combustor and Turbine modules coloured by sensor drift. The side panel shows RUL with its 95% interval, sensor trends, flight-data anomalies and maintenance records.
-- **Schedule:** the rolling plan by depot and the spare-engine pool.
-- **Impact:** policy comparison, spares sensitivity, model accuracy against published results.
+Three tabs, light theme by default with a dark toggle (top right; the choice is remembered).
+
+- **Fleet:** the whole fleet at a glance: aircraft ready to fly, aircraft needing attention, spare engines in stock, a status map of all 40 aircraft, the engines most at risk and the swaps booked for the next two weeks. The switch at the top shows the same fleet under *Run to failure*, *Fixed interval* or *AeroTwin*, and the replay bar (bottom) plays or scrubs the simulated year. Click any aircraft to open its twin.
+- **Aircraft twin:** a 3D model of the aircraft with a short plain-language summary on the right. Hover an engine for a tooltip; click it and it splits into Fan, Compressor, Combustor and Turbine with wear labels. The *Condition*, *X-ray* and *Alerts* chips change what the model shows, and the "How this engine wore out" slider replays the wear of the opened engine from new to today. Prev/next arrows step through the fleet.
+- **Results:** the headline results page: a five-number scorecard (ready to fly, unplanned failures, cost, prediction error, anomaly detection), then fleet impact (comparison bars, the year at a glance, how many spare engines are needed) and model performance (prediction accuracy against published results, how far the uncertainty range can be trusted, anomaly detection by fault type, repair-note analysis). The maintenance plan and a note on what is real versus simulated sit in two collapsed sections at the bottom.
+
+Screenshots of every screen in both themes: `py -3.11 scripts/screenshots.py` (needs `playwright install chromium`).
 
 ## Method
 
