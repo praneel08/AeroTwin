@@ -1,0 +1,276 @@
+{
+ "silhouette_by_k": {
+  "8": 0.14122059021780625,
+  "10": 0.1478494166190616,
+  "12": 0.16435327598098423,
+  "14": 0.16939267183127393
+ },
+ "clusters": [
+  {
+   "id": 0,
+   "size": 500,
+   "top_terms": [
+    "rocker",
+    "gaskets",
+    "cover gaskets",
+    "cover",
+    "rocker cover",
+    "number number"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 1.0,
+   "examples": [
+    "NUMBER TWO AND NUMBER FOUR CYLINDER ROCKER COVER GASKETS ARE LEAKING. REMOVED AND REPLACED GASKETS.",
+    "NUMBERS ONE, TWO AND THREE ROCKER BOX COVER GASKETS LEAKING. INSTALLED NEW ROCKER BOX COVER GASKETS.",
+    "NUMBER TWO AND NUMBER FOUR CYLINDER ROCKER COVER GASKETS LEAKING. REMOVED AND REPLACED ROCKER COVER GASKETS. CLEANED LEAKS"
+   ]
+  },
+  {
+   "id": 1,
+   "size": 1156,
+   "top_terms": [
+    "gasket",
+    "intake",
+    "number intake",
+    "intake gasket",
+    "leaking",
+    "replaced gasket"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.9965397923875432,
+   "examples": [
+    "NUMBER THREE INTAKE IS LEAKING. REMOVED AND REPLACED GASKET.",
+    "NUMBER TWO INTAKE IS LEAKING. REMOVED AND REPLACED NUMBER TWO INTAKE GASKET.",
+    "NUMBER ONE INTAKE GASKET LEAKING. REPLACED WITH NEW GASKET."
+   ]
+  },
+  {
+   "id": 2,
+   "size": 208,
+   "top_terms": [
+    "screw",
+    "missing",
+    "screw missing",
+    "baffle",
+    "baffle screw",
+    "new screw"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.9903846153846154,
+   "examples": [
+    "NUMBER THREE BRAKE MISSING SCREW. REPLACED SCREW.",
+    "SCREW IS MISSING ON NUMBER THREE CYLINDER BAFFLE. INSTALLED NEW SCREW.",
+    "AFT BAFFLE SCREW LOOSE. TIGHTENED BAFFLE SCREW."
+   ]
+  },
+  {
+   "id": 3,
+   "size": 448,
+   "top_terms": [
+    "tube",
+    "rod",
+    "screws",
+    "tightened",
+    "loose",
+    "tie"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.8950892857142857,
+   "examples": [
+    "ROCKER BOX COVER SCREWS LOOSE, ALL CYLINDERS. TIGHTENED SCREWS.",
+    "INDUCTION TUBE HOSE CLAMPS LOOSE, ALL CYLINDERS. TIGHTENED HOSE CLAMPS.",
+    "INDUCTION TUBE HOSE CLAMPS LOOSE, ALL CYLINDERS. TIGHTENED HOSE CLAMPS."
+   ]
+  },
+  {
+   "id": 4,
+   "size": 452,
+   "top_terms": [
+    "aircraft",
+    "ran",
+    "engine",
+    "up",
+    "run",
+    "start"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.6792035398230089,
+   "examples": [
+    "ENGINE IDLE OVERRIDE KILLED ENGINE. TRIED TO ADJUST IDLE SEVERAL TIMES, WOULDN'T ADJUST.",
+    "ENGINE IDLE OVERRIDE KILLED ENGINE. REMOVED AND REPLACED FUEL SERVO",
+    "ENGINE IDLE OVERRIDE KILLED ENGINE. AIRCRAFT WAS RUN UP, SET IDLE SPEED, MIXTURE OK, NO LEAKS NOTED"
+   ]
+  },
+  {
+   "id": 5,
+   "size": 226,
+   "top_terms": [
+    "crack",
+    "stop",
+    "stop drilled",
+    "drilled",
+    "drilled crack",
+    "cracked"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.9690265486725663,
+   "examples": [
+    "LEFT-HAND REAR ENGINE BAFFLE CRACKED. STOP DRILLED CRACK.",
+    "TOP LEFT-HAND BAFFLE HAS A CRACK. STOP DRILLED CRACK.",
+    "LEFT-HAND ENGINE NUMBER FOUR CYLINDER BAFFLE CRACKED. STOP DRILLED CRACK."
+   ]
+  },
+  {
+   "id": 6,
+   "size": 279,
+   "top_terms": [
+    "seal",
+    "baffle seal",
+    "baffle",
+    "seal loose",
+    "loose",
+    "forward"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.9713261648745519,
+   "examples": [
+    "RIGHT-HAND ENGINE NUMBER THREE AFT BAFFLE SEAL IS LOOSE. SECURED BAFFLE SEAL.",
+    "TOP FRONT RIGHT-HAND BAFFLE, BAFFLE SEAL RIVET PULLED THROUGH. DRILLED OUT RIVET AND INSTALLED SCREW AND NUT TO ATTACH RIGHT-HAND",
+    "LEFT-HAND SIDE OF ENGINE FORWARD RUBBER SEAL LOOSE. SECURED BAFFLE SEAL."
+   ]
+  },
+  {
+   "id": 7,
+   "size": 649,
+   "top_terms": [
+    "cover",
+    "rocker cover",
+    "rocker",
+    "cover gasket",
+    "gasket",
+    "number rocker"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.9938366718027735,
+   "examples": [
+    "NUMBER FOUR ROCKER COVER IS LEAKING. REMOVED AND REPLACED NUMBER FOUR ROCKER COVER GASKET.",
+    "NUMBER TWO ROCKER COVER GASKET LEAKING. REMOVED AND REPLACED NUMBER TWO ROCKER COVER GASKET.",
+    "NUMBER ONE AND NUMBER THREE ROCKER COVER GASKET LEAKING. REMOVED AND REPLACED NUMBER ONE AND NUMBER THREE ROCKER COVER GASKET."
+   ]
+  },
+  {
+   "id": 8,
+   "size": 260,
+   "top_terms": [
+    "intakes",
+    "intakes leaking",
+    "number intakes",
+    "gaskets",
+    "number number",
+    "leaking"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 1.0,
+   "examples": [
+    "NUMBER ONE AND NUMBER THREE INTAKES LEAKING. REMOVED AND REPLACED NUMBER ONE AND NUMBER THREE ROCKER COVER GASKETS.",
+    "LEFT-HAND ENGINE NUMBERS TWO, THREE AND FOUR INTAKES ARE LEAKING. REPLACED ALL THREE GASKETS.",
+    "NUMBER TWO AND NUMBER FOUR INTAKES ARE LEAKING. REMOVED AND REPLACED INTAKE GASKETS."
+   ]
+  },
+  {
+   "id": 9,
+   "size": 322,
+   "top_terms": [
+    "gaskets",
+    "intake gaskets",
+    "intake",
+    "gaskets leaking",
+    "number number",
+    "number intake"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.9906832298136646,
+   "examples": [
+    "RIGHT-HAND ENGINE NUMBER THREE AND NUMBER FOUR INTAKE TUBES ARE LEAKING. REPLACED NUMBER THREE AND NUMBER FOUR INTAKE GASKETS.",
+    "NUMBER TWO AND NUMBER FOUR INTAKE GASKET LEAKING. REMOVED AND REPLACED NUMBER TWO AND NUMBER FOUR INTAKE GASKETS.",
+    "NUMBER TWO INTAKE IS LEAKING. REMOVED AND REPLACED INTAKE GASKETS."
+   ]
+  },
+  {
+   "id": 10,
+   "size": 649,
+   "top_terms": [
+    "oil",
+    "engine",
+    "bolt",
+    "leak",
+    "cooler",
+    "oil cooler"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.74884437596302,
+   "examples": [
+    "RIGHT-HAND ENGINE FORWARD ALTERNATOR ATTACH BOLT LOOSE. SECURED ALTERNATOR ATTACH BOLT AND RESAFETIED.",
+    "IN FLIGHT, ENGINE BECAME ROUGH. DISCOVERED RIGHT MAGNETO INOPERABLE. REMOVED NUMBER THREE CYLINDER, DISCONNECTED FUEL DISTRIBUTOR LINE",
+    "OIL DIPSTICK OIL STICK IS LOOSE. REMOVED AND REPLACED DIPSTICK."
+   ]
+  },
+  {
+   "id": 11,
+   "size": 129,
+   "top_terms": [
+    "plug",
+    "baffle plug",
+    "baffle",
+    "installed",
+    "new",
+    "plug worn"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.7984496124031008,
+   "examples": [
+    "LEFT-HAND BAFFLE PLUG WORN. REMOVED AND REPLACED PLUG.",
+    "BAFFLE PLUG HOLE WORN. INSTALLED PATCH AND NEW PLUG.",
+    "NUMBER THREE BAFFLE BUTTON PLUG BAD. INSTALLED NEW BUTTON PLUG."
+   ]
+  },
+  {
+   "id": 12,
+   "size": 377,
+   "top_terms": [
+    "cylinder",
+    "number cylinder",
+    "compression",
+    "exhaust",
+    "low",
+    "valve"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.9310344827586207,
+   "examples": [
+    "IN FLIGHT, ENGINE BECAME ROUGH. DISCOVERED RIGHT MAGNETO INOPERABLE. REASSEMBLED ENGINE, NUMBER THREE CYLINDER DRY TAPPET CLEARANCE CHECK GOOD",
+    "ENGINE STARTED RUNNING ROUGH AND VIBRATING A LOT. COMPLETED REASSEMBLY OF NUMBER THREE CYLINDER ASSEMBLY. INSTALLED NEW INTAKE VALVE",
+    "ENGINE STARTED RUNNING ROUGH AND VIBRATING A LOT. REMOVED NUMBER THREE CYLINDER. INSTALLED SERVICEABLE CYLINDER ASSEMBLY."
+   ]
+  },
+  {
+   "id": 13,
+   "size": 514,
+   "top_terms": [
+    "baffle",
+    "plugs",
+    "baffle plugs",
+    "bracket",
+    "cracked",
+    "aft"
+   ],
+   "main_component": "Engine / cylinders / oil",
+   "component_share": 0.7684824902723736,
+   "examples": [
+    "NUMBER ONE ENGINE BAFFLE CRACKED. FABRICATED PATCH OF LIKE MATERIAL AND RIVETED IN ACCORDANCE WITH REFERENCE MANUAL ",
+    "RIGHT-HAND MAGNETO BLAST TUBE FELL OFF. REMOVED RIGHT-HAND AFT BAFFLE TO FACILITATE REPAIR.",
+    "RIGHT ENGINE NUMBER FOUR AIR BAFFLE IS CRACKED. REMOVED AND REPLACED NUMBER FOUR AIR BAFFLE."
+   ]
+  }
+ ]
+}

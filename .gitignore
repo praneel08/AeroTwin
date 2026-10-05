@@ -1,12 +1,17 @@
-dataset/*
-!dataset/README.md
+.venv/
 __pycache__/
 *.pyc
-.venv/
 node_modules/
-frontend/dist/
-artifacts/
+demo/frontend/dist/
+*.log
 *.part
 *.db
-artifacts_*.log
-artifacts/shots/
+
+# downloaded datasets (recreate with: python -m src.download_datasets)
+data/*
+!data/.gitkeep
+!data/README.md
+
+# trained weights and generated binaries (recreate with: python -m src.pipeline)
+models/*
+!models/.gitkeep

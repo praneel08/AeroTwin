@@ -1,0 +1,113 @@
+{
+ "predictive": [
+  {
+   "spares": 4,
+   "availability": 0.5540068493150685,
+   "failures": 80.5
+  },
+  {
+   "spares": 6,
+   "availability": 0.7653767123287671,
+   "failures": 88.5
+  },
+  {
+   "spares": 8,
+   "availability": 0.9103938356164384,
+   "failures": 54.5
+  },
+  {
+   "spares": 10,
+   "availability": 0.9641095890410958,
+   "failures": 9.25
+  },
+  {
+   "spares": 12,
+   "availability": 0.970085616438356,
+   "failures": 0.25
+  },
+  {
+   "spares": 14,
+   "availability": 0.9701369863013699,
+   "failures": 0.0
+  },
+  {
+   "spares": 18,
+   "availability": 0.9701369863013698,
+   "failures": 0.0
+  }
+ ],
+ "time_based": [
+  {
+   "spares": 4,
+   "availability": 0.5797602739726028,
+   "failures": 82.25
+  },
+  {
+   "spares": 6,
+   "availability": 0.7910958904109588,
+   "failures": 91.5
+  },
+  {
+   "spares": 8,
+   "availability": 0.9066438356164384,
+   "failures": 54.0
+  },
+  {
+   "spares": 10,
+   "availability": 0.9471061643835617,
+   "failures": 18.25
+  },
+  {
+   "spares": 12,
+   "availability": 0.9517979452054794,
+   "failures": 9.75
+  },
+  {
+   "spares": 14,
+   "availability": 0.9527568493150684,
+   "failures": 9.0
+  },
+  {
+   "spares": 18,
+   "availability": 0.9529623287671233,
+   "failures": 9.0
+  }
+ ],
+ "corrective": [
+  {
+   "spares": 4,
+   "availability": 0.5377397260273972,
+   "failures": 84.5
+  },
+  {
+   "spares": 6,
+   "availability": 0.7407705479452055,
+   "failures": 100.75
+  },
+  {
+   "spares": 8,
+   "availability": 0.8544349315068493,
+   "failures": 118.25
+  },
+  {
+   "spares": 10,
+   "availability": 0.8882020547945204,
+   "failures": 124.5
+  },
+  {
+   "spares": 12,
+   "availability": 0.8968150684931507,
+   "failures": 126.0
+  },
+  {
+   "spares": 14,
+   "availability": 0.898304794520548,
+   "failures": 126.0
+  },
+  {
+   "spares": 18,
+   "availability": 0.8984246575342466,
+   "failures": 126.25
+  }
+ ]
+}
