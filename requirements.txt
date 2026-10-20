@@ -10,5 +10,5 @@ openpyxl
 ortools
 fastapi
 uvicorn[standard]
-# optional: screenshots for visual QA (scripts/screenshots.py)
+# optional: screenshots for visual QA (demo/screenshots.py)
 playwright

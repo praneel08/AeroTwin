@@ -12,10 +12,10 @@ Checklist before sharing this repository link, following the standard
 - [x] Key features are listed.
 - [x] Technology stack is listed.
 - [x] Setup and run instructions work (`python -m src.pipeline --serve`).
-- [ ] Team members and roles are mentioned (see section 11 of the README).
+- [x] Team members and roles are mentioned (see the Team table in section 1 of the README).
 - [x] Important screenshots are added to `assets/screenshots/`.
-- [ ] Final PPT/presentation is placed in `submission/` (or an external link is added to `submission/PRESENTATION.md`).
-- [ ] Demo video link is added to `submission/DEMO.md` (optional).
+- [x] Final PPT/presentation is linked from `submission/PRESENTATION.md`.
+- [x] Demo video link is added to `submission/DEMO.md`.
 - [ ] Repository is accessible to reviewers.
 
 ## Recommended structure
@@ -43,11 +43,11 @@ AeroTwin/
 
 ## Presentation
 
-Upload the final PPT/PPTX to `submission/` when the file size is suitable for GitHub, using a clear filename such as `AeroTwin_SIH2026_Presentation.pptx`. If it is too large, use Google Drive/OneDrive and put the shareable viewer link in `submission/PRESENTATION.md`.
+The deck is hosted on Google Drive and linked from `submission/PRESENTATION.md`: https://drive.google.com/file/d/1FaXCgO1cnWS0HmVXmlaM3yUKPJN67sAh/view?usp=drive_link. Check the sharing setting is "Anyone with the link" so reviewers are not asked to request access.
 
 ## Demo video
 
-Optional. If recorded (see `submission/DEMO.md` for the suggested script), add its YouTube/Google Drive link there and make sure it is accessible without requesting permission.
+Recorded and linked in `submission/DEMO.md`: https://youtu.be/ehU8d_xvV-Y. Check that it plays in a logged-out browser without requesting permission.
 
 ## Screenshots
 

@@ -1,4 +1,4 @@
-"""Download the datasets used by AeroTwin into ./dataset (stdlib only, safe to re-run).
+"""Download the datasets used by AeroTwin into data/ (stdlib only, safe to re-run).
 
     py -3.11 -m src.download_datasets                 # default set (~230 MB)
     py -3.11 -m src.download_datasets --with-ngafid   # + NGAFID flights/maintenance (~1.1 GB)
